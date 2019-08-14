@@ -22,7 +22,7 @@
     width: 100%;
     background: black url('date-2276564_edited.jpg');
    
-    animation: panning 50s infinite linear;
+    animation: panning 70s infinite linear;
   }
   
   .overlay {
@@ -70,4 +70,10 @@
     font-family: 'Raleway', sans-serif;
     font-size: 25px;
     padding: 20px 50px;
+    transition-timing-function: ease-in;
+    transition: 0.2s;
+  }
+
+  button:hover {
+    background-color: rgba(255, 255, 255, 0.158);
   }
