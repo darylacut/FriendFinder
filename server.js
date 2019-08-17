@@ -15,8 +15,8 @@ app.use(express.json());
 
 // ---------    these routes direct the server to the target;
 
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 
 

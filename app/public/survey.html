@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Survey</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
@@ -176,7 +176,8 @@
                 <h4 class="modal-title">Your Best Match:</h4>
               </div>
               <div class="modal-body">
-                <p>Name</p>
+                <img id='bestPic'>
+                <p id='bestName'></p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -186,10 +187,14 @@
           </div>
         </div>
 
+
+  <!-----       code for obtaining data from input form       ----->
+
+      
     <script type="text/javascript">
     
 
-    //  gather data upon clicking the  submit button;
+    //  gather data upon clicking the submit button;
     $("#submit").on("click", function(event) {
       event.preventDefault();
 
@@ -209,9 +214,27 @@
             $("#sel10").val()
           ]
         };
+    
 
         // posting to the friends API;
-        $.post("/api/friends", userData, function(data);
+        $.post("/api/friends", userData, function(data) {
+
+    });
+
+    getMatch();
+})
+    
+  // -------      creating function to get best match;
+
+  function getMatch () {
+      $.ajax({ url: "/api/friends", method: 'GET' })
+      .then(function(friends) {
+
+
+      })
+    }
+
+
 
     </script>
 
