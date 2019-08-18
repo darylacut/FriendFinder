@@ -14,13 +14,13 @@ module.exports = function(app) {
   });
 
 
-// ---------    code for when the server submits data for the form
+// ---------    code for when the server submits data from the form to the API;
 
 
   app.post("/api/friends", function(req, res) { 
       friends.push(req.body);
       res.json(true);
-    
+
   });
 
    
