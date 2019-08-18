@@ -204,7 +204,7 @@
     $("#submit").on("click", function(event) {
       event.preventDefault();
 
-      var userData = {
+      var newFriend = {
           name: $("#name").val(),
           photo: $("#photo").val(),
           scores: [
@@ -223,24 +223,14 @@
     
 
         // posting to the friends API;
-        $.post("/api/friends", userData, function(data) {
+        $.post("/api/friends", newFriend, function(data) {
+            $("#bestName").text(data.name);
+            $("bestPic").attr("src", data.photo);
 
-    });
+        });
 
-    getMatch();
 })
     
-  // -------      creating function to get best match;
-
-  function getMatch () {
-      $.ajax({ url: "/api/friends", method: 'GET' })
-      .then(function(friends) {
-
-
-      })
-    }
-
-
 
     </script>
 
