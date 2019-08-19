@@ -19,10 +19,7 @@ module.exports = function(app) {
 
   app.post("/api/friends", function(req, res) { 
       var newFriend = req.body;
-      var match = {
-          name: "",
-          photo: ""
-      }
+      var match = []
 
 // -----    creating a variable array for storing all the differences of all the responses of all friends in the friendsArray, versus the user or "newFriend" entry, the Math.abs is used to get only absolute value differences ;
 
@@ -86,16 +83,16 @@ function getMinIndex (allTotalDiffs) {
 //  ---------     now we obtain the values of the best match;
 
 function getMatch (minIndex) {
-  
+
   //console.log("Your best match is:" + friendsArray[minIndex].name);
-    match.name = friendsArray[minIndex].name;
-    match.photo = friendsArray[minIndex].photo;
+   match.push(friendsArray[minIndex].name);
+    match.push(friendsArray[minIndex].photo);
 }
 
 
     
     friendsArray.push(newFriend);
-      res.json(match);
+      res.json(friendsArray[minIndex]);
 
   });
 
