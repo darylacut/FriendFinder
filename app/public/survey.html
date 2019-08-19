@@ -177,7 +177,7 @@
                 <h4 class="modal-title">Your Best Match:</h4>
               </div>
               <div class="modal-body">
-                <img id='bestPic'>
+                <img id='bestPic' src="">
                 <p id='bestName'></p>
               </div>
               <div class="modal-footer">
@@ -226,7 +226,7 @@
         // posting to the friends API;
         $.post(window.location.origin + "/api/friends", newFriend, function(data) {  
             $("#bestName").text(data.name);
-            $("bestPic").attr("src", data.photo);
+            $("#bestPic").attr("src", data.photo);
 
         });
 
