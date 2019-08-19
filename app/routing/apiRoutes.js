@@ -2,7 +2,7 @@
 // --------     these are linking the routes to data sources.
 
 
-var friends = require("../data/friends");
+var friendsArray = require("../data/friends");
 
 
 
@@ -10,7 +10,7 @@ module.exports = function(app) {
 
   // api get requests when users visit a page showing a JSON of the data
   app.get("/api/friends", function(req, res) {
-    res.json(friends);
+    res.json(friendsArray);
   });
 
 
@@ -18,8 +18,12 @@ module.exports = function(app) {
 
 
   app.post("/api/friends", function(req, res) { 
+      var match = {
+        name : '',
+        photo : ''
+      };
+
       var newFriend = req.body;
-      var match = []
 
 // -----    creating a variable array for storing all the differences of all the responses of all friends in the friendsArray, versus the user or "newFriend" entry, the Math.abs is used to get only absolute value differences ;
 
@@ -85,14 +89,13 @@ function getMinIndex (allTotalDiffs) {
 function getMatch (minIndex) {
 
   //console.log("Your best match is:" + friendsArray[minIndex].name);
-   match.push(friendsArray[minIndex].name);
-    match.push(friendsArray[minIndex].photo);
+   match.name = friendsArray[minIndex].name;
+    match.photo = friendsArray[minIndex].photo;
 }
 
 
-    
     friendsArray.push(newFriend);
-      res.json(friendsArray[minIndex]);
+      res.json(match);
 
   });
 
