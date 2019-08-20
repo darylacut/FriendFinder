@@ -93,3 +93,7 @@
     padding: 0px 50px 50px 50px;
     text-align: center;
   }
+
+  #bestPic {
+    max-width: 500;
+  }
