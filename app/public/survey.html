@@ -224,9 +224,9 @@
     
 
         // posting to the friends API;
-        $.post(window.location.origin + "/api/friends", newFriend, function(data) {  
-            $("#bestName").text(data.name);
-            $("#bestPic").attr("src", data.photo);
+        $.post(window.location.origin + "/api/friends", newFriend, function(match) {  
+            $("#bestName").text(match.name);
+            $("#bestPic").attr("src", match.photo);
 
         });
 

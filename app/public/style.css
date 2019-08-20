@@ -95,5 +95,6 @@
   }
 
   #bestPic {
-    max-width: 500;
+    max-width: 600px;
+    margin: 0 auto;
   }
